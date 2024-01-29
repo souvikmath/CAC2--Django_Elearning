@@ -114,7 +114,7 @@ menu ul li:first-child{
 }
 .center .btns button:last-child{
   background: white;
-  color: black;
+  color: #ffff;
 }
 
 
@@ -122,12 +122,12 @@ body {
     font-family: 'arial', sans-serif;
     line-height: 1.6;
     /*margin: 20px;*/
-    background-color: #abb8c1; 
+    background-color: #6586a9; 
     margin-bottom:50px ;
 }
 
 h1 {
-    color: black;
+    color: White;
     margin-left: 250px;
 }
 
@@ -149,5 +149,5 @@ li {
     margin-left: 250px;
     margin-right: 250px;
     text-align: justify;
-    color: #1b1b1bef;
+    color: #ffff;
 }
