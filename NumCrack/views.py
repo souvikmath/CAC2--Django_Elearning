@@ -10,11 +10,11 @@ def index(request):
 def about(request):
    return render(request,'aboutUs.html')
 
-def Services(request):
-    return HttpResponse("This is Services")
+def stdash(request):
+    return render(request,'stdashboard.html')
 
-def Contact(request):
-    return HttpResponse("This is Contact")
+def trdash(request):
+    return render(request,'teacherDashboard.html')
 
 def auth(request):
     return render(request,'login.html')
@@ -32,7 +32,12 @@ def user_login(request):
         user = authenticate(username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('home')
+            if user.is_superuser:
+                return redirect('admin/')
+            elif user.is_staff:
+                return redirect("trdash")
+            else:
+                return redirect("stdash")
         else:
             messages.info(request,"invalid login")
             return redirect('login')

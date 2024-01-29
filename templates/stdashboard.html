@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+{% comment %} <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title> {% endcomment %}
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'css/stDashboard.css' %}">
+    {% endblock style %}
+    {% block content %}
+{% comment %} </head> {% endcomment %}
+{% comment %} <body>  {% endcomment %}
+
+
+{% comment %} <div class="dashboard-container">
+     {% endcomment %}
+   
+
+    <section class="main-content">
+        <aside class="sidebar">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="#Referral Materials">Referral Materials</a></li>
+                <li><a href="#grades">Grades</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#results">Results</a></li>
+            </ul>
+        </aside>
+
+        <div class="content">
+            <div id="upcoming-assignments" class="widget">
+                <h2>Referral Materials</h2>
+                <ul>
+                    <li>Assignment 1 - Due on March 15</li>
+                    <li>Assignment 2 - Due on March 22</li>
+                    <li>Assignment 3 - Due on March 30</li>
+                </ul>
+            </div>
+
+            <div id="grades" class="widget">
+                <h2>Grades</h2>
+                <p>Your current GPA is 3.5</p>
+            </div>
+
+            <div id="notifications" class="widget">
+                <h2>Notifications</h2>
+                <p>No new notifications</p>
+            </div>
+
+            <div id="quiz" class="widget">
+                <h2>Quiz</h2>
+                <p>Take the latest quiz!</p>
+                <!-- Add quiz-related content here -->
+            </div>
+
+            <div id="results" class="widget">
+                <h2>Results</h2>
+                <p>View your quiz results here.</p>
+                <!-- Add result-related content here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Student Dashboard</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+{% endblock content %}
