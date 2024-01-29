@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link rel="stylesheet" href="{% static 'css/aboutUs.css' %}">
-
-    <nav>
+    {% include "components/navbar.html" %}
+    {% comment %} <nav>
         <div class="menu">
           <div class="logo">
             <a href="#">NumCrack</a>
@@ -19,7 +19,7 @@
             <li><a href="{% url 'login' %}">Login</a></li>
           </ul>
        </div>
-    </nav>
+    </nav> {% endcomment %}
 </head>
 <body>
     

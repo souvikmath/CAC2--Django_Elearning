@@ -44,8 +44,8 @@ def user_register(request):
         username = request.POST['username']
         email = request.POST['email']
         password = request.POST['password']
-        gender = request.POST['gender']
-        education = request.POST['education']
+        # gender = request.POST['gender']
+        # education = request.POST['education']
         # phone = request.POST['phone']
         if User.objects.filter(username=username).exists():
             messages.info(request,"user already exist")
@@ -54,7 +54,7 @@ def user_register(request):
             messages.info(request,"email already taken")
             return render(request,'register.html')
         else:
-          user=User.objects.create_user(username=username,email=email,password=password,gender=gender,education=education,phone=phone)
+          user=User.objects.create_user(username=username,email=email,password=password)
           user.save();
         return redirect('login')
     else:
