@@ -5,9 +5,13 @@
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
 }
+body{
+  background-color: #6586a9;
+}
+
 ::selection{
   color: #000;
-  background: #fff;
+  background: #6586a9;
 }
 nav{
   position: fixed;
@@ -53,21 +57,7 @@ nav .menu{
   background: #fff;
   color: black;
 }
-.img{
-  background: url('img3.jpg')no-repeat;
-  width: 100%;
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-.img::before{
-  content: '';
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.4);
-}
+
 .center{
   position: absolute;
   top: 52%;
@@ -78,12 +68,12 @@ nav .menu{
   text-align: center;
 }
 .center .title{
-  color: #fff;
+  color: #000000;
   font-size: 55px;
   font-weight: 600;
 }
 .center .sub_title{
-  color: #fff;
+  color: #000000;
   font-size: 52px;
   font-weight: 600;
 }
