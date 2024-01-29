@@ -4,9 +4,10 @@
 {% load static %}
 
 
-<div class="container" id="container">
+<div class="container" id="container"> 
+  {% block style %}
   <link rel="stylesheet" href="{% static 'css/login.css' %}"/>
-  
+  {% endblock style %}
 <div class="">
    
   <form method="POST" enctype="" action="{% url 'user_register' %}">
