@@ -23,5 +23,7 @@ admin.site.index_title = "Welcome to Elearning Portal"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('NumCrack.urls'))
+    path('', include('NumCrack.urls')),
+    # path('accounts/', include('django.contrib.auth.urls')),
+    # path('login',login,name='login'),
 ]
