@@ -4,6 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins',sans-serif;
+  color: #fff;
 }
 ::selection{
   color: #000;
@@ -124,6 +125,7 @@ body {
     /*margin: 20px;*/
     background-color: #6586a9; 
     margin-bottom:50px ;
+    color: #fff;
 }
 
 h1 {
