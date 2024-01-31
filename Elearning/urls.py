@@ -16,6 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from teachers.views import *
 
 admin.site.site_header = "Elearning Admin"
 admin.site.site_title = "Elearning Admin Portal"
@@ -24,6 +25,8 @@ admin.site.index_title = "Welcome to Elearning Portal"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('NumCrack.urls')),
+
+    path('teachers/',teachers, name="teachers"),
     # path('accounts/', include('django.contrib.auth.urls')),
     # path('login',login,name='login'),
 ]

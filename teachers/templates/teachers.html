@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Module</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <div class="form-group">
+            <label for="quizName">Quiz Name:</label>
+            <input type="text" id="quizName" name="quizName" placeholder="Enter quiz name">
+        </div>
+
+        <div class="form-group">
+            <label for="topic">Topic:</label>
+            <input type="text" id="topic" name="topic" placeholder="Enter quiz topic">
+        </div>
+
+        <div class="form-group">
+            <label for="numQuestions">Number of Questions:</label>
+            <input type="number" id="numQuestions" name="numQuestions" min="1" placeholder="Enter number of questions">
+        </div>
+
+        <div class="form-group">
+            <label for="time">Time (minutes):</label>
+            <input type="number" id="time" name="time" min="1" placeholder="Enter time limit">
+        </div>
+
+        <div class="form-group">
+            <label for="passScore">Required Score to Pass (%):</label>
+            <input type="number" id="passScore" name="passScore" min="1" max="100" placeholder="Enter required pass score">
+        </div>
+
+        <div class="form-group">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty" name="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+        </div>
+
+        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            // Implement your logic for submitting the quiz details
+            alert("Quiz details submitted!");
+        }
+    </script>
+
+</body>
+</html>
