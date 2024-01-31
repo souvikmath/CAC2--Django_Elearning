@@ -8,4 +8,8 @@ from django.views.generic import ListView
 
 class QuizListView(ListView):
     model= Quiz
-    template_name='Quizes'/'main.html'
+    template_name='quizes/main.html'
+
+def quiz_view(request,pk):
+    quiz =Quiz.object.get(pk=pk)
+    return render(request,'quizez/quiz.html',{'obj':quiz})

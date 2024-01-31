@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 admin.site.site_header = "Elearning Admin"
 admin.site.site_title = "Elearning Admin Portal"
@@ -26,4 +29,7 @@ urlpatterns = [
     path('', include('NumCrack.urls')),
     # path('accounts/', include('django.contrib.auth.urls')),
     # path('login',login,name='login'),
+    path('', include('authentication.urls')),
+    path('halo',include('quizes.urls'),name='quizes'),
 ]
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
