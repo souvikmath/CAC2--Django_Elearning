@@ -1,27 +1,11 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="{% static 'css/aboutUs.css' %}">
-    {% include "components/navbar.html" %}
-    {% comment %} <nav>
-        <div class="menu">
-          <div class="logo">
-            <a href="#">NumCrack</a>
-          </div>
-          <ul>
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Leader Board</a></li>
-            <li><a href="{% url 'login' %}">Login</a></li>
-          </ul>
-       </div>
-    </nav> {% endcomment %}
-</head>
-<body>
+{% extends "base.html" %}
+{%load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/aboutUs.css' %}" />
+{% endblock style %}
+
+{% block content %}
     
     <br>
     <br>
@@ -56,6 +40,4 @@
         <p>Unlock the world of possibilities with NumCrack - Where Mathematics meets Mastery!</p>
     </section> 
 
-    
-</body>
-</html>
+{% endblock content %}

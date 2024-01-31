@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/teacherDashboard.css' %}">
+</head>
+<body>
+
+<div class="dashboard-container">
+    <header>
+        <h1>Welcome, Teacher!</h1>
+    </header>
+
+    <section class="main-content">
+        <aside class="sidebar">
+            <h2>Navigation</h2>
+            <ul>
+                <li><a href="#add-questions">Add Questions</a></li>
+                <li><a href="#add-answers">Add Answers</a></li>
+                <li><a href="#see-quiz">See Quiz</a></li>
+                <li><a href="#see-results">See Results</a></li>
+            </ul>
+        </aside>
+
+        <div class="content">
+            <div id="add-questions" class="widget">
+                <h2>Add Questions</h2>
+                <form>
+                    <label for="question">Question:</label>
+                    <textarea id="question" name="question" rows="4" cols="50"></textarea>
+                    <button type="submit">Add Question</button>
+                </form>
+            </div>
+
+            <div id="add-answers" class="widget">
+                <h2>Add Answers</h2>
+                <form>
+                    <label for="answer1">Option 1:</label>
+                    <input type="text" id="answer1" name="answer1">
+
+                    <label for="answer2">Option 2:</label>
+                    <input type="text" id="answer2" name="answer2">
+
+                    <label for="answer3">Option 3:</label>
+                    <input type="text" id="answer3" name="answer3">
+
+                    <label for="answer4">Option 4:</label>
+                    <input type="text" id="answer4" name="answer4">
+
+                    <button type="submit">Add Answers</button>
+    
+                </form>
+            </div>
+
+            <div id="see-quiz" class="widget">
+                <h2>See Quiz</h2>
+                <p>View the current quiz questions.</p>
+                <!-- Add quiz-related content here -->
+            </div>
+
+            <div id="see-results" class="widget">
+                <h2>See Results</h2>
+                <p>View the results of the quizzes.</p>
+                <!-- Add result-related content here -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Teacher Dashboard</p>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
