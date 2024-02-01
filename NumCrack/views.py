@@ -60,7 +60,7 @@ def user_register(request):
             return render(request,'register.html')
         else:
           user=User.objects.create_user(username=username,email=email,password=password)
-          user.save();
+          user.save()
         return redirect('login')
     else:
      return render(request,'register.html')
