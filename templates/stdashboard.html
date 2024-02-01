@@ -20,12 +20,12 @@
 
     <section class="main-content">
         <aside class="sidebar">
-            <h2>Navigation</h2>
+            <h2>Navigation {{user.username}}</h2>
             <ul>
-                <li><a href="#Referral Materials">Referral Materials</a></li>
+                <li><a href="">{{user.username}}</a></li>
                 <li><a href="#grades">Grades</a></li>
-                <li><a href="#notifications">Notifications</a></li>
-                <li><a href="#quiz">Quiz</a></li>
+                <li><a href="#notifications">{{user.email}}</a></li>
+                <li><a href="{% url 'main-view' %}">Quiz</a></li>
                 <li><a href="#results">Results</a></li>
             </ul>
         </aside>

@@ -27,15 +27,14 @@
     <div class="panel-heading">
       <h6 class="panel-title">Students</h6>
     </div>
+    {% for user_det in users %}
     <table class="table table-hover" id="dev-table">
       <thead>
         <tr>
 
-          <th>Name</th>
-          <th>Profile Picture</th>
-          <th>Mobile</th>
-          <th>Address</th>
-         
+          <th>{{ user_det.username }}</th>
+          <th>{{ user_det.email }}</th>
+    {% endfor %}
           <th>Update</th>
           <th>Delete</th>
         </tr>
