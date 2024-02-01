@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'results',
     'quizes',
     'questions',
+    'teachers',
 ]
 
 MIDDLEWARE = [
@@ -123,7 +124,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS=[
-    os.path.join(BASE_DIR,'static')
+    os.path.join(BASE_DIR,'static'),
+    BASE_DIR / 'quizes' /'static',
 
 ]
 
