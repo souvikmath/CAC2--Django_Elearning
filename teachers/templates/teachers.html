@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Module</title>
+    <title>Quiz Module  </title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,49 +54,49 @@
 <body>
 
     <div class="quiz-container">
-        <div class="form-group">
-            <label for="quizName">Quiz Name:</label>
-            <input type="text" id="quizName" name="quizName" placeholder="Enter quiz name">
-        </div>
+        <form method = "POST">
+            {% csrf_token %}
 
-        <div class="form-group">
-            <label for="topic">Topic:</label>
-            <input type="text" id="topic" name="topic" placeholder="Enter quiz topic">
-        </div>
+            <div class="form-group">
+                <label for="quizName">Quiz Name:</label>
+                <input type="text" name="quizName" placeholder="Enter quiz name">
+            </div>
 
-        <div class="form-group">
-            <label for="numQuestions">Number of Questions:</label>
-            <input type="number" id="numQuestions" name="numQuestions" min="1" placeholder="Enter number of questions">
-        </div>
+            <div class="form-group">
+                <label for="topic">Topic:</label>
+                <input type="text"  name="topic" placeholder="Enter quiz topic">
+            </div>
 
-        <div class="form-group">
-            <label for="time">Time (minutes):</label>
-            <input type="number" id="time" name="time" min="1" placeholder="Enter time limit">
-        </div>
+            <div class="form-group">
+                <label for="numQuestions">Number of Questions:</label>
+                <input type="number" name="numQuestions" min="1" placeholder="Enter number of questions">
+            </div>
 
-        <div class="form-group">
-            <label for="passScore">Required Score to Pass (%):</label>
-            <input type="number" id="passScore" name="passScore" min="1" max="100" placeholder="Enter required pass score">
-        </div>
+            <div class="form-group">
+                <label for="time">Time (minutes):</label>
+                <input type="number" name="time" min="1" placeholder="Enter time limit">
+            </div>
 
-        <div class="form-group">
-            <label for="difficulty">Difficulty:</label>
-            <select id="difficulty" name="difficulty">
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="passScore">Required Score to Pass (%):</label>
+                <input type="number" name="passScore" min="1" max="100" placeholder="Enter required pass score">
+            </div>
 
-        <button type="button" onclick="submitQuiz()">Submit Quiz</button>
+            <div class="form-group">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty" name="difficulty">
+                    <option value=""> --SELECT-- </option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+
+           <button type="submit">Submit Quiz</button>
+
+        </form>
     </div>
 
-    <script>
-        function submitQuiz() {
-            // Implement your logic for submitting the quiz details
-            alert("Quiz details submitted!");
-        }
-    </script>
 
 </body>
 </html>
