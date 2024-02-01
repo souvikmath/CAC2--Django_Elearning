@@ -17,11 +17,12 @@ header, footer {
     color: #fff;
     text-align: center;
     padding: 10px;
+    margin-top: 60px;
 }
 
 .main-content {
     display: flex;
-    height: 70vh;
+    height: 57vh;
 }
 
 .sidebar {
@@ -33,6 +34,7 @@ header, footer {
     margin-top: 15px;
     margin-bottom: 35px;
     width: 40vh;
+    height: 400px;
     text-align: center;
 }
 
@@ -126,8 +128,8 @@ li {
 }
 
 .stquiz{
-    width: 20%;
-    height: 20%;
+    width: 25%;
+    height: 35%;
     border-radius: 20px;
     margin: 10px; 
     padding: 20px;
