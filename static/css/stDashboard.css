@@ -5,34 +5,37 @@ body {
 }
 
 .dashboard-container {
-    /*max-width: 800px;*/
-    margin: 20px auto;
-    background-color: #f0f0f0;
+    background-color: rgb(240, 240, 240);
     padding: 20px;
-    /*border-radius: 10px;*/
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
 }
 
 header, footer {
-    background-color: #000000;
+    background-color: #000000d5;
     color: #fff;
     text-align: center;
     padding: 10px;
+    margin-top: 60px;
 }
 
 .main-content {
     display: flex;
+    height: 57vh;
 }
 
 .sidebar {
-    /*flex: 1;*/
-    background-color: #d9e1c2;
-    color: black;
-    padding: 25px;
-    border-radius: 10px;
+    background-color: #6586a9;
+    color: #fff;
+    padding: 15px;
+    border-radius:15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top: 15px;
     margin-bottom: 35px;
+    width: 40vh;
+    height: 400px;
+    text-align: center;
 }
 
 .sidebar h2 {
@@ -49,7 +52,7 @@ header, footer {
 }
 
 .sidebar a {
-    color: black;
+    color: #fff;
     text-decoration: none;
     display: block;
     padding: 8px;
@@ -57,22 +60,56 @@ header, footer {
     transition: background-color 0.3s;
 }
 
-.sidebar a:hover {
-    background-color: #555;
+.sidebar #sidenav:hover {
+    background-color: #728395;
 }
 
 .content {
     flex: 2;
-    padding: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
 }
 
 .widget {
-    background-color: #778da9;
-    color: black;
-    padding: 25px;
+    background-color:  #fff;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 300px;
     margin-bottom: 20px;
     border-radius: 15px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin-top: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+textarea, input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
 }
 
 ul {
@@ -82,4 +119,21 @@ ul {
 
 li {
     margin-bottom: 5px;
+}
+
+.widgets{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.stquiz{
+    width: 25%;
+    height: 35%;
+    border-radius: 20px;
+    margin: 10px; 
+    padding: 20px;
+    background-color: #6586a9;
+    font-size: larger;
+    font-weight: 700;
 }

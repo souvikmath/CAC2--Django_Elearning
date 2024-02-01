@@ -11,7 +11,10 @@ def about(request):
    return render(request,'aboutUs.html')
 
 def stdash(request):
-    return render(request,'stdashboard.html')
+    user_id=request.user.id
+    userObj=User.objects.get(id=user_id)
+    return render(request,"stdashboard.html",{'user':userObj})
+        
 
 def trdash(request):
     return render(request,'teacherDashboard.html')
@@ -21,6 +24,11 @@ def auth(request):
 
 def registerr(request):
     return render(request,'register.html')
+
+def staff(request):
+    return render(request,'staff_register.html')
+
+
 
 
 
@@ -33,7 +41,7 @@ def user_login(request):
         if user is not None:
             login(request, user)
             if user.is_superuser:
-                return redirect('admin/')
+                return redirect('dash')
             elif user.is_staff:
                 return redirect("trdash")
             else:
@@ -60,9 +68,31 @@ def user_register(request):
             return render(request,'register.html')
         else:
           user=User.objects.create_user(username=username,email=email,password=password)
-          user.save();
+          user.save()
         return redirect('login')
     else:
      return render(request,'register.html')
 
-       
+
+def staff_register(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        # gender = request.POST['gender']
+        # education = request.POST['education']
+        # phone = request.POST['phone']
+        if User.objects.filter(username=username).exists():
+            messages.info(request,"user already exist")
+            return render(request,'staff_register.html')
+        elif User.objects.filter(email=email).exists():
+            messages.info(request,"email already taken")
+            return render(request,'staff_register.html')
+        else:
+          user=User.objects.create_user(username=username,email=email,password=password)
+          user.is_staff=True
+          user.save()
+         
+        return redirect('login')
+    else:
+     return render(request,'staff_register.html')

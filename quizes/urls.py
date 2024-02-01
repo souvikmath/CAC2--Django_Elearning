@@ -1,7 +1,15 @@
-from django.contrib import admin
 from django.urls import path
-from . import views
+from .views import (
+    QuizListView,
+    quiz_view
+)
+from .import views
+
+app_name = 'quizes'
 
 urlpatterns = [
-   path("createQuiz", views.createQuiz,name='createQuiz'),
+    path('h',QuizListView.as_view(),name='main-view'),
+    path('<pk>/',quiz_view,name='quiz-view'),
+    # path('basequiz',views.basequiz,name='basequiz'),
+
 ]

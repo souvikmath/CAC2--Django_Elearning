@@ -1,75 +1,74 @@
 {% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-{% comment %} <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Dashboard</title> {% endcomment %}
+
     {% block style %}
     <link rel="stylesheet" href="{% static 'css/stDashboard.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     {% endblock style %}
     {% block content %}
-{% comment %} </head> {% endcomment %}
-{% comment %} <body>  {% endcomment %}
 
-
-{% comment %} <div class="dashboard-container">
-     {% endcomment %}
-   
-
-    <section class="main-content">
-        <aside class="sidebar">
-            <h2>Navigation</h2>
-            <ul>
-                <li><a href="#Referral Materials">Referral Materials</a></li>
-                <li><a href="#grades">Grades</a></li>
-                <li><a href="#notifications">Notifications</a></li>
-                <li><a href="#quiz">Quiz</a></li>
-                <li><a href="#results">Results</a></li>
-            </ul>
-        </aside>
-
-        <div class="content">
-            <div id="upcoming-assignments" class="widget">
-                <h2>Referral Materials</h2>
+     <div class="dashboard-container">
+        <header>
+            <h1>Student Dashboard</h1>
+        </header>
+    
+        <section class="main-content">
+            <aside class="sidebar">
+                <h2><img src="{% static "images/student_profile.webp" %}" style="width: 15vh;border-radius: 50%;"></h2>
                 <ul>
-                    <li>Assignment 1 - Due on March 15</li>
-                    <li>Assignment 2 - Due on March 22</li>
-                    <li>Assignment 3 - Due on March 30</li>
+                    <li>Student Name</li><br>
+                    <li>Email</li><br>
+                    <br>
+                    <br>
+                    <li><button type="submit"><a href="#log-out">Log Out</a></button></li>
                 </ul>
+            </aside>
+    
+            <div class="widgets">
+                <div class="stquiz">
+                    <a href="#" 
+                    style="text-decoration:none;
+                           color: #f0f0f0;
+                           display: flex;
+                           justify-content: center;
+                           align-items: center;
+                           flex-direction: column;
+                           line-height: 80px;">
+                    Quiz<br>
+                    <i class="fa-solid fa-file-pen fa-xl" style="color: #f0f0f0;"></i></a>
+                </div>
+                <div class="stquiz">
+                    <a href="#" 
+                    style="text-decoration:none;
+                           color: #f0f0f0;
+                           display: flex;
+                           justify-content: center;
+                           align-items: center;
+                           flex-direction: column;
+                           line-height: 80px;">
+                    Result
+                    <i class="fa-solid fa-eye fa-xl" style="color: #f0f0f0;"></i></a>
+                </div>
+                <div class="stquiz">
+                    <a href="#" 
+                    style="text-decoration:none;
+                           color: #f0f0f0;
+                           display: flex;
+                           justify-content: center;
+                           align-items: center;
+                           flex-direction: column;
+                           line-height: 80px;">
+                    Progress
+                    <i class="fa-solid fa-square-poll-vertical fa-xl" style="color: #f0f0f0;"></i></a>
+                </div>
             </div>
-
-            <div id="grades" class="widget">
-                <h2>Grades</h2>
-                <p>Your current GPA is 3.5</p>
-            </div>
-
-            <div id="notifications" class="widget">
-                <h2>Notifications</h2>
-                <p>No new notifications</p>
-            </div>
-
-            <div id="quiz" class="widget">
-                <h2>Quiz</h2>
-                <p>Take the latest quiz!</p>
-                <!-- Add quiz-related content here -->
-            </div>
-
-            <div id="results" class="widget">
-                <h2>Results</h2>
-                <p>View your quiz results here.</p>
-                <!-- Add result-related content here -->
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Student Dashboard</p>
-    </footer>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
+            
+        </section>
+    
+        <footer>
+            <p>&copy; 2024 Student Dashboard</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
 {% endblock content %}

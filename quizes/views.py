@@ -6,16 +6,13 @@ from django.views.generic import ListView
 
 
 
-def createQuiz(request):
-    if request.method == "POST":
-        name= request.POST.get('quizName')
-        print(name)
-        topic= request.POST.get('topic')
-        number_of_question=request.POST.get('numQuestions')
-        time=request.POST.get('time')
-        required_score_to_pass=request.POST.get('passScore')
-        difficulty=request.POST.get('difficulty')
-        obj = Quiz.objects.create(name=name, topic=topic, number_of_questions=number_of_question,time=time, required_score_to_pass=required_score_to_pass, difficulty=difficulty)
-        obj.save()
-        return render(request, '/')
-    return render (request , 'teachers.html')
+class QuizListView(ListView):
+    model= Quiz
+    template_name='quizes/main.html'
+
+def quiz_view(request,pk):
+    quiz =Quiz.objects.get(pk=pk)
+    return render(request,'quizes/quiz.html',{'obj':quiz})
+
+# def basequiz(request):
+#     return render(request,'quizes/basequiz.html')
