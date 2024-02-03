@@ -28,8 +28,11 @@ def registerr(request):
 def staff(request):
     return render(request,'staff_register.html')
 
+def docUpload(request):
+    return render(request,'docUpload.html')
 
-
+def docView(request):
+    return render(request, 'docView.html')
 
 
 #login view
