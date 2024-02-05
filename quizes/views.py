@@ -104,3 +104,14 @@ def createQuiz(request):
         return render(request, '/')
     else:
         return render (request , 'teachers.html')
+    
+
+
+
+class QuizListView(ListView):
+   model=Quiz
+   template_name ='quizes/main.html'
+
+def quiz_view(request,pk):
+    quiz = Quiz.objects.get(pk=pk)
+    return render(request,'quizes/quiz.html',{'obj':quiz})
