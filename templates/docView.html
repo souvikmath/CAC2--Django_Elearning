@@ -19,9 +19,15 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Mathematics</td>
+                    <td>{{ file.name }}</td>
                     <td>math_notes.pdf</td>
                     <td><a href="downloads/math_notes.pdf" download>Download</a></td>
+                    <ul>
+                        {% for file in files %}
+                            <li><a href="{% url 'download_file' file.id %}">{{ file.name }}</a></li>
+                        {% endfor %}
+                    
+                    
                 </tr>
                 <!-- Add more rows as needed -->
             </tbody>

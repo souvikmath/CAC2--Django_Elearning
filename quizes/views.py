@@ -5,6 +5,16 @@ from .models import Quiz
 from django.views.generic import ListView
 from django.http import JsonResponse
 from results.models import Result
+
+
+class QuizListView(ListView):
+    model=Quiz
+    template_name ='quizes/main.html'
+
+def quiz_view(request,pk):
+    quiz = Quiz.objects.get(pk=pk)
+    return render(request,'quizes/quiz.html',{'obj':quiz}) 
+ 
 def createQuiz(request):
     if request.method == "POST":
         name= request.POST.get('quizName')
@@ -86,7 +96,7 @@ def save_quiz_view(request,pk):
         return JsonResponse({'passed':False,'score':score_,'results':results})
     
 
-    from django.shortcuts import render
+    # from django.shortcuts import render
 
 # Create your views here.
 
@@ -104,3 +114,4 @@ def createQuiz(request):
         return render(request, '/')
     else:
         return render (request , 'teachers.html')
+

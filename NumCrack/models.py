@@ -2,9 +2,9 @@
 
 from django.db import models
 
-class Topic(models.Model):
-    name = models.CharField(max_length=100)
-    file = models.FileField(upload_to='uploads/')
+# class Topic(models.Model):
+#     name = models.CharField(max_length=100)
+#     file = models.FileField(upload_to='uploads/')
 
 
 
@@ -16,3 +16,8 @@ class Message(models.Model):
     content = models.TextField()
     edited = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
+
+
+class File(models.Model):
+    file = models.FileField(upload_to='uploads/')
+    name = models.CharField(max_length=255)

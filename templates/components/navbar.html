@@ -6,16 +6,16 @@
         <a href="#">Num</a><a href="#" style="color:#6586a9">Crack</a>
       </div>
       <ul>
-        {% if request.user.is_staff %}
-        <li><a href="{% url 'trdash' %}">Home</a></li>
-        {% else %}
+        {% comment %} {% if request.user.is_staff %} {% endcomment %}
+        {% comment %} <li><a href="{% url 'trdash' %}">Home</a></li> {% endcomment %}
+       
 
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'about' %}">About Us</a></li>
         {% comment %} <li><a href="#">Leader Board</a></li> {% endcomment %}
         <li><a href="{% url 'login' %}">Login</a></li>
         <li><a href="{% url 'register' %}">Register</a></li>
-        {% endif %}
+        {% comment %} {% endif %} {% endcomment %}
       </ul>
     </div>
   </nav>

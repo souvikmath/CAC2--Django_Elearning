@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login,logout
+
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -29,18 +30,19 @@ def registerr(request):
 def staff(request):
     return render(request,'staff_register.html')
 
-def docUpload(request):
-    return render(request,'docUpload.html')
+# def docUpload(request):
+#     return render(request,'docUpload.html')
 
-def docView(request):
-    return render(request, 'docView.html')
+# def docView(request):
+#     return render(request, 'docView.html')
 
-def add_q(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        return render(request, 'add_q.html', {'name': name, 'email': email})
-    return render(request,'add_q.html')
+# def add_q(request):
+#     if request.method == 'POST':
+#         name = request.POST.get('name')
+#         email = request.POST.get('email')
+#         return render(request, 'add_q.html', {'name': name, 'email': email})
+#     return render(request,'add_q.html')
+
 
 
 def signout(request):
@@ -134,30 +136,57 @@ def staff_register(request):
 
     # views.py
 
-from django import forms
-from django.shortcuts import render
-from .models import Topic
+# from django import forms
+# from django.shortcuts import render
+# from .models import Topic
 
-def my_modal_view(request):
-    class TopicForm(forms.ModelForm):
-        class Meta:
-            model = Topic
-            fields = ['name', 'file']
+# def my_modal_view(request):
+#     class TopicForm(forms.ModelForm):
+#         class Meta:
+#             model = Topic
+#             fields = ['name', 'file']
 
-    if request.method == 'POST':
-        form = TopicForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
-            # Handle form submission, maybe redirect to another page
-    else:
-        form = TopicForm()
-    return render(request, 'home', {'form': form})
-
-
+#     if request.method == 'POST':
+#         form = TopicForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             form.save()
+#             # Handle form submission, maybe redirect to another page
+#     else:
+#         form = TopicForm()
+#     return render(request, 'home', {'form': form})
 
 
 
 
+
+
+# from .models import File
+# from django.conf import settings
+# import os
+
+# def upload_page(request):
+#     return render(request, 'docUpload.html')
+
+# def download_page(request):
+#     files = File.objects.all()
+#     return render(request, 'docView.html', {'files': files})
+
+# def upload_file(request):
+#     if request.method == 'POST' and request.FILES['file']:
+#         uploaded_file = request.FILES['file']
+#         file_instance = File(file=uploaded_file, name=uploaded_file.name)
+#         file_instance.save()
+#         return redirect('download_page')
+#     # else:
+#     return HttpResponse('File upload failed.')
+
+# def download_file(request, file_id):
+#     file_instance = File.objects.get(id=file_id)
+#     file_path = os.path.join(settings.MEDIA_ROOT, str(file_instance.file))
+#     with open(file_path, 'rb') as f:
+#         response = HttpResponse(f.read(), content_type='application/force-download')
+#         response['Content-Disposition'] = f'attachment; filename={file_instance.name}'
+#     return response
 
 
 

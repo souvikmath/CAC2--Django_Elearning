@@ -10,7 +10,7 @@
     <div class="container">
         <div class="upload-container">
             <h1>File Upload</h1>
-            <form action="#"  enctype="multipart/form-data" style="width: 100%">
+            {% comment %} <form action="#"  enctype="multipart/form-data" style="width: 100%">
             {% csrf_token %}
                 <strong><label for="subjectInput">Subject Name:</label></strong>
                 <input type="text" id="subjectInput" name="subjectInput" required>
@@ -27,7 +27,13 @@
                 <div style="display: flex; justify-content: center; align-items: center;">
                 <button type="submit">Upload</button>
                 </div>
+            </form> {% endcomment %}
+            <form action="{% url 'upload_file' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="file" name="file">
+                <button type="submit">Upload</button>
             </form>
+        
         </div>
     </div>
     <script src="{% static 'js/docUpload.js' %}"></script>

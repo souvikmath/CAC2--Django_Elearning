@@ -1,11 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import (
-    QuizListView,
-    quiz_view,
-    quiz_data_view,
-    save_quiz_view
-)
+from .views import *
 from .import views
 
 app_name = 'quizes'

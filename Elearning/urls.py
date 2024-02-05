@@ -34,7 +34,7 @@ urlpatterns = [
     path('account/', include('authentication.urls')),
     path('quiz/',include('quizes.urls')),
     path('teachers/', include('teachers.urls')),
-    path("docUpload", docUpload,name='docUpload'),
+    # path("docUpload", docUpload,name='docUpload'),
     path('signout',signout, name="signout"),
     path('questions/',include('questions.urls')),
 ]

@@ -4,9 +4,10 @@ from NumCrack import views
 from teachers.views import (teachers)
 from quizes.views import (
     QuizListView,
-    quiz_view,
     quiz_data_view,
-    save_quiz_view
+    quiz_view,
+    save_quiz_view,
+    
 )
 
 
@@ -21,12 +22,12 @@ urlpatterns = [
    path("teacher_dashboard",views.trdash,name='trdash'),
    path("staff_register",views.staff_register,name='staff_register'),
    path("staff",views.staff,name='staff'),
-   path("docUpload", views.docUpload,name='docUpload'),
-   path("docView", views.docView, name='docView'),
+#    path("docUpload", views.docUpload,name='docUpload'),
+#    path("docView", views.docView, name='docView'),
    path('quiz/',QuizListView.as_view(),name='main-view'),
    path('quiz/<pk>/',quiz_view,name='quiz-view'),
    path('logout/',views.logout_views,name="logout"),
-    # path('basequiz',views.basequiz,name='basequiz'),
+#    path('basequiz',views.basequiz,name='basequiz'),
    path('quiz/<pk>/data/',quiz_data_view,name='quiz-data-view'),
    path('quiz/<pk>/save/',save_quiz_view, name='save-view'),
 #    path('', views.user_list, name='user_list'),
@@ -34,6 +35,10 @@ urlpatterns = [
 #   path("addQuestion&Answer" , views.teachersQuestion, name ='teachersQuestion'),
 #    path('adddetalis',views.teachersdetalis, name="teacherdetalis"),
   
-  
+    # path('upload/', views.upload_page, name='upload_page'),
+    # path('download/', views.download_page, name='download_page'),
+    # path('upload_file/', views.upload_file, name='upload_file'),
+    # path('download_file/<int:file_id>/', views.download_file, name='download_file'),
+
 
 ]

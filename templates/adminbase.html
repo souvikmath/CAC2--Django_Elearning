@@ -186,8 +186,8 @@
     <a href="{% url 'dash' %}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
     <a href="{% url 'admin-view-teacher' %}"><i class="fas fa-chalkboard-teacher"></i><span>Teacher</span></a>
     <a href="{% url 'admin-view-student' %}"><i class="fas fa-user-graduate"></i><span>Student</span></a>
-    <a href="{% url 'docUpload' %}"><i class="fas fa-question-circle"></i><span>Add Materials</span></a>
-    <a href="{% url 'docView' %}"><i class="fas fa-question-circle"></i><span>See Materials</span></a>
+    {% comment %} <a href="{% url 'docUpload' %}"><i class="fas fa-question-circle"></i><span>Add Materials</span></a> {% endcomment %}
+    {% comment %} <a href="{% url 'docView' %}"><i class="fas fa-question-circle"></i><span>See Materials</span></a> {% endcomment %}
     <a href="{% url 'teachers' %}"><i class="fas fa-question-circle"></i><span>Add Quiz</span></a>
     <a href="{% url 'teachersQuestion' %}"><i class="fas fa-question-circle"></i><span>Add question&Answers</span></a>
 
