@@ -15,18 +15,18 @@
             <aside class="sidebar">
                 <h2><img src="{% static "images/student_profile.webp" %}" style="width: 15vh;border-radius: 50%;"></h2>
                 <ul>
-                    <li>Student Name</li><br>
-                    <li>Email</li><br>
+                    <li>{{user.username}}</li><br>
+                    <li>{{user.email}}</li><br>
                     <br>
                     <br>
                     <br>
-                    <li><button type="submit"><a href="#log-out">Log Out</a></button></li>
+                    <li><button type="submit"><a href="{% url 'signout' %}">Log Out</a></button></li>
                 </ul>
             </aside>
     
             <div class="widgets">
                 <div class="stquiz">
-                    <a href="#" 
+                    <a href="{% url 'main-view' %}" 
                     style="text-decoration:none;
                            color: #f0f0f0;
                            display: flex;

@@ -21,7 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from teachers.views import *
-
+from NumCrack.views import signout
 
 admin.site.site_header = "Elearning Admin"
 admin.site.site_title = "Elearning Admin Portal"
@@ -35,6 +35,6 @@ urlpatterns = [
     path('', include('authentication.urls')),
     path('',include('quizes.urls')),
     path('teachers/', include('teachers.urls')),
-
+    path('signout',signout, name="signout")
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

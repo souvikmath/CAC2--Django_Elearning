@@ -3,7 +3,9 @@ from django.urls import path,include
 from NumCrack import views
 from quizes.views import (
     QuizListView,
-    quiz_view
+    quiz_view,
+    quiz_data_view,
+    save_quiz_view
 )
 
 urlpatterns = [
@@ -17,8 +19,15 @@ urlpatterns = [
    path("teacher_dashboard",views.trdash,name='trdash'),
    path("staff_register",views.staff_register,name='staff_register'),
    path("staff",views.staff,name='staff'),
-   path('h',QuizListView.as_view(),name='main-view'),
-   path('<pk>/',quiz_view,name='quiz-view'),
+   path('quiz/',QuizListView.as_view(),name='main-view'),
+   path('quiz/<pk>/',quiz_view,name='quiz-view'),
     # path('basequiz',views.basequiz,name='basequiz'),
+   path('quiz/<pk>/data/',quiz_data_view,name='quiz-data-view'),
+   path('quiz/<pk>/save/',save_quiz_view, name='save-view'),
+#    path('', views.user_list, name='user_list'),
+   path("add_q", views.add_q, name ='add_q'),
+   path('teacher/', views.teacher_page, name='teacher_page'),
+   path('student/', views.student_page, name='student_page'),
+   path('delete_message/<int:id>/', views.delete_message, name='delete_message'),
 
 ]

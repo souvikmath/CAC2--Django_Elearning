@@ -16,19 +16,19 @@
         <aside class="sidebar">
             <h2><img src="{% static 'images/teacher_profile.jpg' %}" style="width: 15vh;border-radius: 50%;"></h2>
             <ul>
-                <li>Teacher Name</li><br>
-                <li>Topics Handled</li><br>
-                <li>Contact</li>
+                <li>{{user.username}}</li><br>
+                
+                <li>{{user.email}}</li>
                 <br>
                 <br>
                 <br>
-                <li><button type="submit"><a href="#log-out">Log Out</a></button></li>
+                <li><button type="submit"><a href="{% url 'signout' %}">Log Out</a></button></li>
             </ul>
         </aside>
 
         <div class="widgets">
             <div class="addques">
-                <a href="#" 
+                <a href="{% url 'add_q' %}" 
                 style="text-decoration:none;
                        color: #f0f0f0;
                        display: flex;

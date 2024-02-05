@@ -24,6 +24,6 @@ modalBtns.forEach(modalBtn=> modalBtn.addEventListener('click',()=>{
     `
    
     startBtn.addEventListener('click',()=>{
-       window.location.href= pk
+       window.location.href= url + pk
    })
 }))
