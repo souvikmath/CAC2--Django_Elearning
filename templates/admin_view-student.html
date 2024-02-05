@@ -21,36 +21,43 @@
     }
   </style>
 </head>
+<a href="{% url 'user_register' %}">
+  <br>
+  <input type="button" value="Add Student" style="float: right;background-color: #a6e7ff ;margin-right:10%;border-radius:15%;border:none">
+  </a>
 <br><br>
+
 <div class="container">
   <div class="panel panel-primary">
     <div class="panel-heading">
       <h6 class="panel-title">Students</h6>
     </div>
-    {% for user_det in users %}
+    
     <table class="table table-hover" id="dev-table">
       <thead>
-        <tr>
-
-          <th>{{ user_det.username }}</th>
-          <th>{{ user_det.email }}</th>
-    {% endfor %}
-          <th>Update</th>
-          <th>Delete</th>
+        
+          <th>username</th>
+          <th><th>
+          <th>Email</th>
+       
+    
+          {% comment %} <th>Update</th>
+          <th>Delete</th> {% endcomment %}
         </tr>
       </thead>
-      {% for t in students %}
+      {% for user in users %} 
       <tr>
 
-        <td>name</td>
-        <td> <img src="{% static t.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
-        <td>number</td>
-        <td>address</td>
+        <td>{{ user.username }}</td>
+        <td><td>
+        {% comment %} <td> <img src="{% static t.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td> {% endcomment %}
+        <td>{{ user.email }}</td>
+        {% comment %} <td>address</td> {% endcomment %}
         
-        <td><a class="btn btn-primary btn-xs" href="{% url 'update-student' t.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
-        <td><a class="btn btn-danger btn-xs" href="{% url 'delete-student' t.id  %}"><span class="glyphicon glyphicon-trash"></span></a></td>
+        {% comment %} <td><a class="btn btn-primary btn-xs" href="{% url 'update-student' t.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+        <td><a class="btn btn-danger btn-xs" href="{% url 'delete-student' t.id  %}"><span class="glyphicon glyphicon-trash"></span></a></td> {% endcomment %}
       </tr>
-      {% endfor %}
+      {% endfor %} 
     </table>
   </div>
 </div>

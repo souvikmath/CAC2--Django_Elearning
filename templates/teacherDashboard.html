@@ -16,18 +16,20 @@
         <aside class="sidebar">
             <h2><img src="{% static 'images/teacher_profile.jpg' %}" style="width: 15vh;border-radius: 50%;"></h2>
             <ul>
-                <li>Teacher Name</li><br>
-                <li>Topics Handled</li><br>
-                <li>Contact</li>
+                <li>{{user.username}}</li><br>
+                
+                <li>{{user.email}}</li>
                 <br>
                 <br>
-                <li><button type="submit"><a href="#log-out">Log Out</a></button></li>
+                <br>
+                <li><button type="submit"><a href="{% url 'signout' %}">Log Out</a></button></li>
             </ul>
         </aside>
 
+
         <div class="widgets">
             <div class="addques">
-                <a href="#" 
+                <a href="{% url 'teachers' %}" 
                 style="text-decoration:none;
                        color: #f0f0f0;
                        display: flex;
@@ -35,11 +37,11 @@
                        align-items: center;
                        flex-direction: column;
                        line-height: 80px;">
-                Add Question<br>
+                Add Quiz<br>
                 <i class="fa-solid fa-file-pen fa-xl" style="color: #f0f0f0;"></i></a>
             </div>
             <div class="addques">
-                <a href="#" 
+                <a href="{% url 'main-view' %}" 
                 style="text-decoration:none;
                        color: #f0f0f0;
                        display: flex;
@@ -51,7 +53,7 @@
                 <i class="fa-solid fa-eye fa-xl" style="color: #f0f0f0;"></i></a>
             </div>
             <div class="addques">
-                <a href="#" 
+                <a href="{% url 'teachersQuestion' %}" 
                 style="text-decoration:none;
                        color: #f0f0f0;
                        display: flex;
@@ -59,8 +61,20 @@
                        align-items: center;
                        flex-direction: column;
                        line-height: 80px;">
-                See Result
+                Add Question
                 <i class="fa-solid fa-square-poll-vertical fa-xl" style="color: #f0f0f0;"></i></a>
+            </div> 
+            <div class="addques">
+                <a href="{% url 'teacherdetalis' %}" 
+                style="text-decoration:none;
+                       color: #f0f0f0;
+                       display: flex;
+                       justify-content: center;
+                       align-items: center;
+                       flex-direction: column;
+                       line-height: 80px;">
+                Add Detalis<br>
+                <i class="fa-solid fa-file-pen fa-xl" style="color: #f0f0f0;"></i></a>
             </div>
             <div class="addques">
                 <a href="{% url "docUpload" %}" 
@@ -84,4 +98,3 @@
 </div>
 {% endblock content %}
 <script src="script.js"></script>
-

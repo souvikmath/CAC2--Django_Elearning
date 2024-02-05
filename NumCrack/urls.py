@@ -1,10 +1,14 @@
 from django.contrib import admin
 from django.urls import path,include
 from NumCrack import views
+from teachers.views import (teachers)
 from quizes.views import (
     QuizListView,
-    quiz_view
+    quiz_view,
+    quiz_data_view,
+    save_quiz_view
 )
+
 
 urlpatterns = [
    path("", views.index,name='home'),
@@ -19,8 +23,17 @@ urlpatterns = [
    path("staff",views.staff,name='staff'),
    path("docUpload", views.docUpload,name='docUpload'),
    path("docView", views.docView, name='docView'),
-   path('h',QuizListView.as_view(),name='main-view'),
-   path('<pk>/',quiz_view,name='quiz-view'),
+   path('quiz/',QuizListView.as_view(),name='main-view'),
+   path('quiz/<pk>/',quiz_view,name='quiz-view'),
+   path('logout/',views.logout_views,name="logout"),
     # path('basequiz',views.basequiz,name='basequiz'),
+   path('quiz/<pk>/data/',quiz_data_view,name='quiz-data-view'),
+   path('quiz/<pk>/save/',save_quiz_view, name='save-view'),
+#    path('', views.user_list, name='user_list'),
+    # path("addQuiz", views.teachers,name='teachers'),
+#   path("addQuestion&Answer" , views.teachersQuestion, name ='teachersQuestion'),
+#    path('adddetalis',views.teachersdetalis, name="teacherdetalis"),
+  
+  
 
 ]
