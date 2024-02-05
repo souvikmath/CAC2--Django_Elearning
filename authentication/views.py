@@ -16,7 +16,10 @@ def adminviewquestion(request):
     return render(request,'admin-view-questions.html')
 
 def adminviewteacher(request):
-    return render(request,'admin-view-teacher.html')
+    users = User.objects.filter(is_active=True,is_staff=True)
+    return render(request,'admin-view-teacher.html',{'users': users})
 
 def adminviewstudent(request):
-    return render(request,'admin_view-student.html')
+     users = User.objects.filter(is_active=True,is_staff=False)  # Retrieve all user instances
+#     return render(request, 'admin_view-student.html', {'users': users})
+     return render(request,'admin_view-student.html',{'users': users})

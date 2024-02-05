@@ -5,10 +5,8 @@ body {
 }
 
 .dashboard-container {
-    background-color: rgb(240, 240, 240);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 100%;
 }
 
@@ -80,6 +78,7 @@ header, footer {
     margin-bottom: 20px;
     border-radius: 15px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
 }
 
 form {
@@ -124,6 +123,7 @@ li {
 .widgets{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     width: 100%;
 }
 
@@ -136,4 +136,10 @@ li {
     background-color: #6586a9;
     font-size: larger;
     font-weight: 700;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 97.5%;
 }

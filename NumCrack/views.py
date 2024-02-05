@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.contrib.auth import authenticate, login,logout
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -11,10 +12,10 @@ def about(request):
    return render(request,'aboutUs.html')
 
 def stdash(request):
-    user_id=request.user.id
-    userObj=User.objects.get(id=user_id)
-    return render(request,"stdashboard.html",{'user':userObj})
-        
+    users=request.user.id
+    userObj=User.objects.get(id=users)
+    return render(request,"stdashboard.html",{'users':userObj})
+      
 
 def trdash(request):
     return render(request,'teacherDashboard.html')
@@ -28,10 +29,40 @@ def registerr(request):
 def staff(request):
     return render(request,'staff_register.html')
 
+def docUpload(request):
+    return render(request,'docUpload.html')
+
+def docView(request):
+    return render(request, 'docView.html')
+
+def add_q(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        return render(request, 'add_q.html', {'name': name, 'email': email})
+    return render(request,'add_q.html')
+
+
+def signout(request):
+      logout(request)
+      return redirect('login')
+
 def logout_views(request):
     logout(request)
     return redirect('home')
 
+
+# def my_view(request):
+#     if request.method == 'POST':
+#         name = request.POST.get('name')
+#         email = request.POST.get('email')
+#         return render(request, 'my_template.html', {'name': name, 'email': email})
+#     return render(request, 'my_template.html')
+
+
+# def user_list(request):
+#     users = User.objects.all()  # Retrieve all user instances
+#     return render(request, 'admin_view-student.html', {'users': users})def docView(request):
 
 
 #login view
@@ -98,3 +129,54 @@ def staff_register(request):
         return redirect('login')
     else:
      return render(request,'staff_register.html')
+    
+
+
+    # views.py
+
+from django import forms
+from django.shortcuts import render
+from .models import Topic
+
+def my_modal_view(request):
+    class TopicForm(forms.ModelForm):
+        class Meta:
+            model = Topic
+            fields = ['name', 'file']
+
+    if request.method == 'POST':
+        form = TopicForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            # Handle form submission, maybe redirect to another page
+    else:
+        form = TopicForm()
+    return render(request, 'home', {'form': form})
+
+
+
+from .models import Message
+
+def teacher_page(request):
+    students = User.objects.filter(is_active=True)
+    if request.method == 'POST':
+        sender = request.user
+        content = request.POST.get('content')
+        for student in students:
+            Message.objects.create(sender=sender, receiver=student, content=content)
+        return redirect('teacher_page')
+    return render(request, 'teacher_page.html', {'students': students})
+
+def student_page(request):
+    user = request.user
+    received_messages = Message.objects.all()
+    return render(request, 'student_page.html', {'received_messages': received_messages})
+
+from django.shortcuts import get_object_or_404
+
+def delete_message(request,id):
+    message = get_object_or_404(Message, pk=id)
+    # Check if the current user has permission to delete the message
+    # if request.user == message.receiver:
+    message.delete()
+    return redirect('student_page')

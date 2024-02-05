@@ -167,23 +167,23 @@
       <h3>NumCrack</h3>
     </div>
     <div class="right_area">
-      <a href="/logout" class="logout_btn">Logout</a>
+      <a href="{% url 'signout' %}" class="logout_btn">Logout</a>
     </div>
   </header>
   <!--header area end-->
   <!--sidebar start-->
   <div class="sidebar">
     <center>
-
-      <img src="{% static "image/admin.png" %}" class="profile_image" alt="">
-      <h4>{{user.username}}</h4>
+      <h3 style='color:white'>Welcome</h3>
+      {% comment %} <img src="{% static "image/admin.png" %}" class="profile_image" alt=""> {% endcomment %}
+      <h4 style='color:white'>{{user.username}}</h4>
 
     </center>
 
     <a href="{% url 'dash' %}"><i class="fas fa-tachometer-alt"></i><span>Dashboard</span></a>
     <a href="{% url 'admin-view-teacher' %}"><i class="fas fa-chalkboard-teacher"></i><span>Teacher</span></a>
     <a href="{% url 'admin-view-student' %}"><i class="fas fa-user-graduate"></i><span>Student</span></a>
-    <a href="{% url 'admin-view-question' %}"><i class="fas fa-question-circle"></i><span>Questions</span></a>
+    <a href="{% url 'admin-view-question' %}"><i class="fas fa-question-circle"></i><span>See Materials</span></a>
     
 
 

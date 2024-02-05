@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{%load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/docUpload.css' %}" />
+{% endblock style %}
+
+{% block content %}
+
+    <div class="container">
+        <div class="upload-container">
+            <h1>File Upload</h1>
+            <form action="#"  enctype="multipart/form-data" style="width: 100%">
+            {% csrf_token %}
+                <strong><label for="subjectInput">Subject Name:</label></strong>
+                <input type="text" id="subjectInput" name="subjectInput" required>
+
+                <strong><label for="fileNameInput">File Name:</label></strong>
+                <input type="text" id="fileNameInput" name="fileNameInput" required>
+                
+                <strong><label for="fileInput">Choose a file:</label></strong>
+                <div class="file-input-container">
+                    <label for="fileInput" class="custom-file-label">Select File</label>
+                    <input type="file" id="fileInput" name="fileInput" onchange="setfilename(this.value);" value="Select File" accept=".jpg, .jpeg, .png, .pdf" required />
+                    <input id="uploadFile" name="uploadFileOne" type="text" disabled="disabled" placeholder="FileName" class="name-info-form file-witdth" />
+                </div><br>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                <button type="submit">Upload</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="{% static 'js/docUpload.js' %}"></script>
+    
+{% endblock content %}

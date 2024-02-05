@@ -16,12 +16,13 @@
         <aside class="sidebar">
             <h2><img src="{% static 'images/teacher_profile.jpg' %}" style="width: 15vh;border-radius: 50%;"></h2>
             <ul>
-                <li>Teacher Name</li><br>
-                <li>Topics Handled</li><br>
-                <li>Contact</li>
+                <li>{{user.username}}</li><br>
+                
+                <li>{{user.email}}</li>
                 <br>
                 <br>
-               
+                <br>
+                <li><button type="submit"><a href="{% url 'signout' %}">Log Out</a></button></li>
             </ul>
         </aside>
 

@@ -22,7 +22,7 @@
   </style>
 </head>
 <a href="{% url 'staff_register' %}">
-<input type="button" value="Add staff" style="float: right;background-color: blue;margin-right:10%">
+<input type="button" value="Add staff" style="float: right;background-color: #a6e7ff;margin-right:10%">
 </a>
 <br><br>
 <div class="container">
@@ -35,24 +35,27 @@
         <tr>
 
           <th>Name</th>
+          <th><th>
           <th>Email</th>
           
          
-          <th>Update</th>
-          <th>Delete</th>
+          {% comment %} <th>Update</th>
+          <th>Delete</th> {% endcomment %}
         </tr>
       </thead>
-      {% for t in teachers %}
+      {% for user in users %}
       <tr>
 
-        <td> {{t.get_name}}</td>
-        <td> <img src="{% static t.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
-        <td>{{t.mobile}}</td>
-        <td>{{t.address}}</td>
+        <td> {{user.username}}</td>
+        <td><td>
+        {% comment %} <td> <img src="{% static t.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td> {% endcomment %}
+        <td>{{user.email}}</td>
+        <td></td> 
         
-        <td><a class="btn btn-primary btn-xs" href="{% url 'update-teacher' t.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+        {% comment %} <td><a class="btn btn-primary btn-xs" href="{% url 'update-teacher' t.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
         <td><a class="btn btn-danger btn-xs" href="{% url 'delete-teacher' t.id  %}"><span class="glyphicon glyphicon-trash"></span></a></td>
-      </tr>
+      {% endcomment %}
+      </tr> 
       {% endfor %}
     </table>
   </div>
