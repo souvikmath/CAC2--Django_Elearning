@@ -1,9 +1,9 @@
 ## ABOUT TEAM:
-Jaise George 23122016
+### Jaise George 23122016
 
-Stuty Das 23122038
+### Souvik Chowdhury 23122037
 
-Souvik Chowdhury 23122037
+### Stuty Das 23122038
 
 NumCrack, the innovative Elearning Website, was collaboratively created by a team of three new developers. Their combined efforts resulted in a robust platform designed to enhance students' mathematical knowledge through interactive quizzes. Each team member brought unique skills and enthusiasm to the project, contributing to its success. Despite being new to the development scene, the team worked closely, leveraging their diverse backgrounds to deliver a user-friendly and engaging learning environment. The team looks forward to future endeavors, continuously improving and expanding NumCrack's capabilities in the realm of online education.
 
