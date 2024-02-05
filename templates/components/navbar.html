@@ -6,11 +6,22 @@
         <a href="#">Num</a><a href="#" style="color:#6586a9">Crack</a>
       </div>
       <ul>
+        {% if request.user.is_staff %}
+        <li><a href="{% url 'trdash' %}">Home</a></li>
+        {% else %}
+
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'about' %}">About Us</a></li>
         <li><a href="#">Leader Board</a></li>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+        
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+        
+        {% else %}
         <li><a href="{% url 'login' %}">Login</a></li>
         <li><a href="{% url 'register' %}">Register</a></li>
+        {% endif %}
       </ul>
     </div>
   </nav>

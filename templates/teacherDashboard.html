@@ -16,25 +16,19 @@
         <aside class="sidebar">
             <h2><img src="{% static 'images/teacher_profile.jpg' %}" style="width: 15vh;border-radius: 50%;"></h2>
             <ul>
-<<<<<<< HEAD
-                <li><a href="{% url 'teachersQuestion'%}">Add Questions and Answer</a></li>
-                <li><a href="#add-answers">Add Answers</a></li>
-                <li><a href="{% url 'teachers' %}">See Quiz</a></li>
-                <li><a href="#see-results">See Results</a></li>
-=======
                 <li>Teacher Name</li><br>
                 <li>Topics Handled</li><br>
                 <li>Contact</li>
                 <br>
                 <br>
-                <li><button type="submit"><a href="#log-out">Log Out</a></button></li>
->>>>>>> 8b15ab8baa44ff504f647e701a4dddeb79d9e8c3
+               
             </ul>
         </aside>
 
+
         <div class="widgets">
             <div class="addques">
-                <a href="#" 
+                <a href="{% url 'teachersQuestion' %}" 
                 style="text-decoration:none;
                        color: #f0f0f0;
                        display: flex;
@@ -46,7 +40,7 @@
                 <i class="fa-solid fa-file-pen fa-xl" style="color: #f0f0f0;"></i></a>
             </div>
             <div class="addques">
-                <a href="#" 
+                <a href="{% url 'teachers' %}" 
                 style="text-decoration:none;
                        color: #f0f0f0;
                        display: flex;
@@ -69,6 +63,18 @@
                 See Result
                 <i class="fa-solid fa-square-poll-vertical fa-xl" style="color: #f0f0f0;"></i></a>
             </div>
+            <div class="addques">
+                <a href="{% url 'teacherdetalis' %}" 
+                style="text-decoration:none;
+                       color: #f0f0f0;
+                       display: flex;
+                       justify-content: center;
+                       align-items: center;
+                       flex-direction: column;
+                       line-height: 80px;">
+                Add Detalis<br>
+                <i class="fa-solid fa-file-pen fa-xl" style="color: #f0f0f0;"></i></a>
+            </div>
         </div>
         
     </section>
@@ -79,4 +85,3 @@
 </div>
 {% endblock content %}
 <script src="script.js"></script>
-

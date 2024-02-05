@@ -68,74 +68,56 @@
 <body>
 
     <div class="question-form">
-        <div class="quiz-name-box">
-            <label for="quiz">Quiz Name:</label>
-            <select id="quiz" name="quiz">
-                <option value="#"></option>
-                <option value="#"></option>
-                <option value="#"></option>
-            </select>
-        </div>
+        <form method="POST" enctype="multipart/form-data" action="{% url 'saveQandA' %}">
+            {% csrf_token %}
 
-        <h2>Create Question</h2>
+            <div class="quiz-name-box">
+                <label for="quiz">Quiz Name:</label>
+                <select id="quiz" name="quiz">
+                    <option value="#">Select a Quiz</option>
+                    {% for quiz in quizzes %}
+                        <option value="{{ quiz.id }}">{{ quiz.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label for="questionText">Question:</label>
-            <textarea id="questionText" name="questionText" rows="4" placeholder="Enter your question"></textarea>
-        </div>
+            <h2>Create Question</h2>
 
-        <div class="form-group">
-            <label for="quizOptions">Quiz Options:</label>
-            <div id="quizOptionsContainer">
-                <div class="quiz-option-container">
-                    <input type="text" class="quiz-option" placeholder="Enter quiz option 1">
-                </div>
-                <div class="quiz-option-container">
-                    <input type="text" class="quiz-option" placeholder="Enter quiz option 2">
-                </div>
-                <div class="quiz-option-container">
-                    <input type="text" class="quiz-option" placeholder="Enter quiz option 3">
-                </div>
-                <div class="quiz-option-container">
-                    <input type="text" class="quiz-option" placeholder="Enter quiz option 4">
+            <div class="form-group">
+                <label for="questionText">Question:</label>
+                <textarea id="questionText" name="questionText" rows="4" placeholder="Enter your question"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="quizOptions">Quiz Options:</label>
+                <div id="quizOptionsContainer">
+                    <div class="quiz-option-container">
+                        <input type="text" class="quiz-option" placeholder="Enter quiz option 1">
+                    </div>
+                    <div class="quiz-option-container">
+                        <input type="text" class="quiz-option" placeholder="Enter quiz option 2">
+                    </div>
+                    <div class="quiz-option-container">
+                        <input type="text" class="quiz-option" placeholder="Enter quiz option 3">
+                    </div>
+                    <div class="quiz-option-container">
+                        <input type="text" class="quiz-option" placeholder="Enter quiz option 4">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        
+            
 
-        <div class="form-group">
-            <label for="answer">Correct Answer:</label>
-            <input type="text" id="answer" name="answer" placeholder="Enter the correct answer">
-        </div>
+            <div class="form-group">
+                <label for="answer">Correct Answer:</label>
+                <input type="text" id="answer" name="answer" placeholder="Enter the correct answer">
+            </div>
 
-        <button type="button" onclick="createQuestion()">Create Question</button>
+            <input type="submit" value="Save">
+        </form>  
     </div>
 
-    <script>
-        function createQuestion() {
-            var quizName = document.getElementById('quizName').value;
-            var questionText = document.getElementById('questionText').value;
-            var optionInputs = document.querySelectorAll('.quiz-option');
-            var selectedQuiz = document.getElementById('quiz').value;
-            var answer = document.getElementById('answer').value;
-
-            var optionsArray = Array.from(optionInputs).map(input => input.value);
-
-            // Display the created question (you can replace this with your logic)
-            alert("Quiz Name: " + quizName +
-                  "\nQuestion: " + questionText +
-                  "\nQuiz Options: " + optionsArray.join(', ') +
-                  "\nSelected Quiz: " + selectedQuiz +
-                  "\nCorrect Answer: " + answer);
-
-            // Clear input fields
-            document.getElementById('quizName').value = '';
-            document.getElementById('questionText').value = '';
-            document.getElementById('answer').value = '';
-            document.getElementById('quizOptionsContainer').innerHTML = '';
-        }
-    </script>
+    
 
 </body>
 </html>

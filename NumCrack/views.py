@@ -28,7 +28,9 @@ def registerr(request):
 def staff(request):
     return render(request,'staff_register.html')
 
-
+def logout_views(request):
+    logout(request)
+    return redirect('home')
 
 
 

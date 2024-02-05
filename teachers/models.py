@@ -4,7 +4,6 @@ from django.db import models
 
 
 class Teacher(models.Model):
-    name = models.CharField(max_length =100)
-    email = models.EmailField()
-    image = models.ImageField()
-    file = models.FileField(upload_to ="classnotes")
+    teacher_name = models.CharField(max_length=100)
+    topics_handled = models.TextField()
+    contact_no = models.CharField(max_length=15)
