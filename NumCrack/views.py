@@ -47,6 +47,10 @@ def signout(request):
       logout(request)
       return redirect('home')
 
+def logout_views(request):
+    logout(request)
+    return redirect('home')
+
 
 # def my_view(request):
 #     if request.method == 'POST':

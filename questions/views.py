@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+from quizes.models import Quiz
+from .models import Question,Answer
+
 # Create your views here.
 
 

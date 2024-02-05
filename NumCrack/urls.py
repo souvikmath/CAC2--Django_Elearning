@@ -25,6 +25,7 @@ urlpatterns = [
    path("docView", views.docView, name='docView'),
    path('quiz/',QuizListView.as_view(),name='main-view'),
    path('quiz/<pk>/',quiz_view,name='quiz-view'),
+   path('logout/',views.logout_views,name="logout"),
     # path('basequiz',views.basequiz,name='basequiz'),
    path('quiz/<pk>/data/',quiz_data_view,name='quiz-data-view'),
    path('quiz/<pk>/save/',save_quiz_view, name='save-view'),

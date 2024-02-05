@@ -26,6 +26,7 @@
             </ul>
         </aside>
 
+
         <div class="widgets">
             <div class="addques">
                 <a href="{% url 'teachers' %}" 
@@ -64,7 +65,7 @@
                 <i class="fa-solid fa-square-poll-vertical fa-xl" style="color: #f0f0f0;"></i></a>
             </div> 
             <div class="addques">
-                <a href="{% url "docUpload" %}" 
+                <a href="{% url 'teacherdetalis' %}" 
                 style="text-decoration:none;
                        color: #f0f0f0;
                        display: flex;
@@ -72,8 +73,8 @@
                        align-items: center;
                        flex-direction: column;
                        line-height: 80px;">
-                Upload Document
-                <i class="fa-solid fa-upload fa-xl" style="color: #f0f0f0;"></i></a>
+                Add Detalis<br>
+                <i class="fa-solid fa-file-pen fa-xl" style="color: #f0f0f0;"></i></a>
             </div>
         </div>
         
@@ -85,4 +86,3 @@
 </div>
 {% endblock content %}
 <script src="script.js"></script>
-

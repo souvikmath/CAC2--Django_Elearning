@@ -31,10 +31,8 @@ admin.site.index_title = "Welcome to Elearning Portal"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('NumCrack.urls')),
-    # path('accounts/', include('django.contrib.auth.urls')),
-    # path('login',login,name='login'),
-    path('', include('authentication.urls')),
-    path('',include('quizes.urls')),
+    path('account/', include('authentication.urls')),
+    path('quiz/',include('quizes.urls')),
     path('teachers/', include('teachers.urls')),
     path("docUpload", docUpload,name='docUpload'),
     path('signout',signout, name="signout"),
