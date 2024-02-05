@@ -28,7 +28,7 @@
 
         <div class="widgets">
             <div class="addques">
-                <a href="{% url 'add_q' %}" 
+                <a href="{% url 'teachers' %}" 
                 style="text-decoration:none;
                        color: #f0f0f0;
                        display: flex;
@@ -36,11 +36,11 @@
                        align-items: center;
                        flex-direction: column;
                        line-height: 80px;">
-                Add Question<br>
+                Add Quiz<br>
                 <i class="fa-solid fa-file-pen fa-xl" style="color: #f0f0f0;"></i></a>
             </div>
             <div class="addques">
-                <a href="#" 
+                <a href="{% url 'main-view' %}" 
                 style="text-decoration:none;
                        color: #f0f0f0;
                        display: flex;
@@ -52,7 +52,7 @@
                 <i class="fa-solid fa-eye fa-xl" style="color: #f0f0f0;"></i></a>
             </div>
             <div class="addques">
-                <a href="#" 
+                <a href="{% url 'teachersQuestion' %}" 
                 style="text-decoration:none;
                        color: #f0f0f0;
                        display: flex;
@@ -60,9 +60,9 @@
                        align-items: center;
                        flex-direction: column;
                        line-height: 80px;">
-                See Result
+                Add Question
                 <i class="fa-solid fa-square-poll-vertical fa-xl" style="color: #f0f0f0;"></i></a>
-            </div>
+            </div> 
             <div class="addques">
                 <a href="{% url "docUpload" %}" 
                 style="text-decoration:none;

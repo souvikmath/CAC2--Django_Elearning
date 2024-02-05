@@ -16,7 +16,7 @@
     <span>or use your account</span>
     <input type="text" name="username" id="username" placeholder="username" required>
     <input type="password" name="password" id="password" placeholder="password" required>
-    <a href="#">Forgot your password?</a>
+    {% comment %} <a href="#">Forgot your password?</a> {% endcomment %}
     <button type="submit">Sign In</button>
     {% for messages in messages %}
     <h3 style="color:#ff512f">{{messages}}</h3>

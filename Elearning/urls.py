@@ -37,6 +37,7 @@ urlpatterns = [
     path('',include('quizes.urls')),
     path('teachers/', include('teachers.urls')),
     path("docUpload", docUpload,name='docUpload'),
-    path('signout',signout, name="signout")
+    path('signout',signout, name="signout"),
+    path('questions/',include('questions.urls')),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

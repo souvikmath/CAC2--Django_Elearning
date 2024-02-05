@@ -45,7 +45,7 @@ def add_q(request):
 
 def signout(request):
       logout(request)
-      return redirect('login')
+      return redirect('home')
 
 
 # def my_view(request):
@@ -151,28 +151,9 @@ def my_modal_view(request):
 
 
 
-from .models import Message
 
-def teacher_page(request):
-    students = User.objects.filter(is_active=True)
-    if request.method == 'POST':
-        sender = request.user
-        content = request.POST.get('content')
-        for student in students:
-            Message.objects.create(sender=sender, receiver=student, content=content)
-        return redirect('teacher_page')
-    return render(request, 'teacher_page.html', {'students': students})
 
-def student_page(request):
-    user = request.user
-    received_messages = Message.objects.all()
-    return render(request, 'student_page.html', {'received_messages': received_messages})
 
-from django.shortcuts import get_object_or_404
 
-def delete_message(request,id):
-    message = get_object_or_404(Message, pk=id)
-    # Check if the current user has permission to delete the message
-    # if request.user == message.receiver:
-    message.delete()
-    return redirect('student_page')
+
+

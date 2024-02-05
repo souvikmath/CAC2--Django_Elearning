@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-{% block content %}
-<br><br><br>
-<form method="post">
-    {% csrf_token %}
-    <textarea name="content"></textarea>
-    <button type="submit">Send</button>
-</form>
-{% endblock content %}
